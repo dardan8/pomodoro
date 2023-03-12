@@ -1,5 +1,30 @@
 .tabs_container {
   width: 100%;
-  position: relative;
-  top: -3rem;
+  margin-top: -3rem;
+}
+
+.tabs_button {
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  background-color: #f4f4f4;
+  border-radius: 1rem 1rem 0 0;
+  cursor: pointer;
+
+  color: #333;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.tabs_button_inactive {
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  background-color: #f4f4f400;
+  border-radius: 1rem 1rem 0 0;
+  cursor: pointer;
+
+  color: #f4f4f49d;
+  letter-spacing: 1px;
+  font-size: 14px;
 }

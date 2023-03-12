@@ -45,7 +45,6 @@ const Countdown = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Countdown</h1>
       <div className={styles.timer_container}>
         <CircularProgressbar
           value={percentage}
