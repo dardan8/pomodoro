@@ -73,26 +73,47 @@ const Countdown = () => {
             }}
           />
         </div>
-
-        <Button
-          title='Start'
-          icon={<FaPlayCircle />}
-          onClick={() => {
-            setIsPaused(false);
-            isPausedRef.current = false;
-          }}
-        />
-        <Button
-          title='Pause'
-          icon={<FaPauseCircle />}
-          onClick={() => {
-            setIsPaused(true);
-            isPausedRef.current = true;
-          }}
-        />
+        <div className={styles.button_container}>
+          <Button
+            title='Start'
+            icon={<FaPlayCircle />}
+            onClick={() => {
+              setIsPaused(false);
+              isPausedRef.current = false;
+            }}
+          />
+          <Button
+            title='Pause'
+            icon={<FaPauseCircle />}
+            onClick={() => {
+              setIsPaused(true);
+              isPausedRef.current = true;
+            }}
+          />
+        </div>
       </div>
 
-      <div className={styles.todos_container}></div>
+      <div className={styles.todos_container}>
+        <h1>To-do's</h1>
+        <div>
+          <label className={styles.todo_List}>
+            <input type='checkbox' />
+            Finish wireframe
+          </label>
+          <label className={styles.todo_List}>
+            <input type='checkbox' />
+            Finish wireframe
+          </label>
+          <label className={styles.todo_List}>
+            <input type='checkbox' />
+            Finish wireframe
+          </label>
+          <label className={styles.todo_List}>
+            <input type='checkbox' />
+            Finish wireframe
+          </label>
+        </div>
+      </div>
     </div>
   );
 };
