@@ -6,8 +6,11 @@ import "react-circular-progressbar/dist/styles.css";
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./countdown.module.scss";
 
+import Button from "./Button";
+import { FaPlayCircle, FaPauseCircle } from "react-icons/fa";
+
 const Countdown = () => {
-  const WORKING_TIME = 1500;
+  const WORKING_TIME = 150;
   const [isPaused, setIsPaused] = useState(true);
   const [seconds, setSeconds] = useState(WORKING_TIME);
 
@@ -46,27 +49,50 @@ const Countdown = () => {
   return (
     <div className={styles.container}>
       <div className={styles.timer_container}>
-        <CircularProgressbar
-          value={percentage}
-          text={minutes + ":" + secondsLeft}
+        <div>
+          <CircularProgressbar
+            value={percentage}
+            text={minutes + ":" + secondsLeft}
+            styles={{
+              root: {},
+
+              path: {
+                // Path color
+                stroke: `rgba(132, 169, 140, ${percentage / 100})`,
+              },
+              text: {
+                // Text color
+                fill: "#f4a259",
+                // Text size
+                fontSize: "17px",
+              },
+              trail: {
+                // Trail color
+                stroke: "#f4f4f4",
+              },
+            }}
+          />
+        </div>
+
+        <Button
+          title='Start'
+          icon={<FaPlayCircle />}
+          onClick={() => {
+            setIsPaused(false);
+            isPausedRef.current = false;
+          }}
+        />
+        <Button
+          title='Pause'
+          icon={<FaPauseCircle />}
+          onClick={() => {
+            setIsPaused(true);
+            isPausedRef.current = true;
+          }}
         />
       </div>
-      <button
-        onClick={() => {
-          setIsPaused(false);
-          isPausedRef.current = false;
-        }}
-      >
-        start timer
-      </button>
-      <button
-        onClick={() => {
-          setIsPaused(true);
-          isPausedRef.current = true;
-        }}
-      >
-        Pause
-      </button>
+
+      <div className={styles.todos_container}></div>
     </div>
   );
 };

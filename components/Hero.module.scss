@@ -1,13 +1,18 @@
 .hero_container {
   width: 100%;
-  padding: 5rem 10rem;
-  height: 38vh;
-  background-color: #5252d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 4rem;
+  height: 30vh;
   color: #f4f4f4;
+  background-color: #84a98c;
 
   .hero_container_left {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    width: 100%;
   }
 }
