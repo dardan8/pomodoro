@@ -8,9 +8,10 @@ import styles from "./countdown.module.scss";
 
 import Button from "./Button";
 import { FaPlayCircle, FaPauseCircle } from "react-icons/fa";
+import TodoList from "./TodoList";
 
 const Countdown = () => {
-  const WORKING_TIME = 150;
+  const WORKING_TIME = 1500;
   const [isPaused, setIsPaused] = useState(true);
   const [seconds, setSeconds] = useState(WORKING_TIME);
 
@@ -95,24 +96,7 @@ const Countdown = () => {
 
       <div className={styles.todos_container}>
         <h1>To-do's</h1>
-        <div>
-          <label className={styles.todo_List}>
-            <input type='checkbox' />
-            Finish wireframe
-          </label>
-          <label className={styles.todo_List}>
-            <input type='checkbox' />
-            Finish wireframe
-          </label>
-          <label className={styles.todo_List}>
-            <input type='checkbox' />
-            Finish wireframe
-          </label>
-          <label className={styles.todo_List}>
-            <input type='checkbox' />
-            Finish wireframe
-          </label>
-        </div>
+        <TodoList />
       </div>
     </div>
   );
