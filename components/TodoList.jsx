@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const TodoList = () => {
   const [todoList, setToDoList] = useState("");
+  const [todoInput, setToDoInpit] = useState("");
 
   const todos = [
     {
