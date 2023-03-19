@@ -3,51 +3,44 @@ import styles from "./TodoList.module.scss";
 import { useState } from "react";
 
 const TodoList = () => {
-  const [todoList, setToDoList] = useState("");
-  const [todoInput, setToDoInpit] = useState("");
+  const [todoList, setToDoList] = useState([]);
+  const [todoInput, setToDoInput] = useState("");
 
-  const todos = [
-    {
-      id: 1,
-      content: "Wireframe todo",
-    },
-    {
-      id: 2,
-      content: "Social media todo",
-    },
-    {
-      id: 3,
-      content: "develop web",
-    },
-    {
-      id: 4,
-      content: "develop web",
-    },
-  ];
+  const addToDo = (e) => {
+    setToDoInput("");
+
+    e.preventDefault();
+    setToDoList([{ id: 4, item: todoInput, completed: false }, ...todoList]);
+  };
+
   return (
     <div className={styles.todo_widgetarea}>
       <form className={styles.form_todo}>
         <input
           className={styles.todo_input}
           type='text'
+          value={todoInput}
           placeholder='What are you working on?'
           onChange={(e) => {
-            setToDoList(e.target.value);
+            setToDoInput(e.target.value);
           }}
         />
-        <button className={styles.todo_button}>Add Task</button>
+        <button className={styles.todo_button} onClick={addToDo}>
+          Add Task
+        </button>
       </form>
+
       <div className={styles.todo_items}>
-        {todos.map((todo, id) => {
+        {todoList.map((todo, id) => {
           return (
-            <label className={styles.todo_List}>
-              <input type='checkbox' id={todo.id} />
-              {todo.content}
-            </label>
+            <div className={styles.checkbox_wrapper}>
+              <label>
+                <input type='checkbox' id={todo.id} />
+                {todo.item}
+              </label>
+            </div>
           );
         })}
-
-        {todoList}
       </div>
     </div>
   );
