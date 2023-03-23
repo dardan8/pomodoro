@@ -52,16 +52,8 @@
   background-color: #84a98cd3;
 }
 
-.checkbox_wrapper input[type="checkbox"] {
-  /* removing default appearance */
-  -webkit-appearance: none;
-  appearance: none;
-  /* creating a custom design */
-  width: 1.6em;
-  height: 1.6em;
-  border-radius: 0.15em;
-  margin-right: 0.5em;
-  border: 0.15em solid #007a7e;
-  outline: none;
-  cursor: pointer;
+.checkbox_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }

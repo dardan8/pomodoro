@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./TodoList.module.scss";
 import { useState } from "react";
+import { ImBin } from "react-icons/im";
+import Checkbox from "./Checkbox/Checkbox";
 
 const TodoList = () => {
   const [todoList, setToDoList] = useState([]);
@@ -8,9 +10,15 @@ const TodoList = () => {
 
   const addToDo = (e) => {
     setToDoInput("");
-
     e.preventDefault();
-    setToDoList([{ id: 4, item: todoInput, completed: false }, ...todoList]);
+    setToDoList([
+      { id: Math.random() * 100, item: todoInput, completed: false },
+      ...todoList,
+    ]);
+  };
+
+  const deleteToDo = (id) => {
+    setToDoList(todoList.filter((todo) => todo.id != id));
   };
 
   return (
@@ -29,19 +37,20 @@ const TodoList = () => {
           Add Task
         </button>
       </form>
-
-      <div className={styles.todo_items}>
-        {todoList.map((todo, id) => {
-          return (
-            <div className={styles.checkbox_wrapper}>
-              <label>
-                <input type='checkbox' id={todo.id} />
-                {todo.item}
-              </label>
-            </div>
-          );
-        })}
-      </div>
+      {todoList.length > 0 ? (
+        <div className={styles.todo_items}>
+          {todoList.map((todo, key) => {
+            return (
+              <div className={styles.checkbox_wrapper} key={todo.id}>
+                <Checkbox id={todo.id} label={todo.item} />
+                <ImBin onClick={() => deleteToDo(todo.id)} />
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        "Add a to-do and it will appear here"
+      )}
     </div>
   );
 };
