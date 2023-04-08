@@ -1,27 +1,49 @@
+.checkbox_wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .checkbox_wrapper input[type="checkbox"] {
   /* removing default appearance */
   -webkit-appearance: none;
   appearance: none;
+
   /* custom checkbox */
+
   width: 1.6em;
   height: 1.6em;
   border-radius: 50%;
   margin-right: 0.5em;
-  border: 0.15em solid #007a7e;
+  border: 1px solid #96b69d;
+  background-color: #84a98c63;
+
   outline: none;
   cursor: pointer;
 }
 
 .checkbox_wrapper input:checked {
-  background-color: #007a7e;
+  background-color: #96b69d;
   position: relative;
 }
 
 .checkbox_wrapper input:checked::before {
-  content: "24";
-  font-size: 1.5em;
-  color: #fff;
+  content: url("/images/checkmark.svg");
   position: absolute;
-  right: 1px;
-  top: -5px;
+  left: 2.5px;
+  bottom: -1px;
+}
+
+.checkbox_wrapper label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 14px;
+  font-weight: 300;
+  color: #333;
+}
+
+.done_task {
+  text-decoration: line-through;
 }

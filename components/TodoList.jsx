@@ -21,6 +21,9 @@ const TodoList = () => {
     setToDoList(todoList.filter((todo) => todo.id != id));
   };
 
+  const todoStatus = (id) => {};
+  console.log(todoList);
+
   return (
     <div className={styles.todo_widgetarea}>
       <form className={styles.form_todo}>
@@ -41,9 +44,23 @@ const TodoList = () => {
         <div className={styles.todo_items}>
           {todoList.map((todo, key) => {
             return (
-              <div className={styles.checkbox_wrapper} key={todo.id}>
-                <Checkbox id={todo.id} label={todo.item} />
-                <ImBin onClick={() => deleteToDo(todo.id)} />
+              <div
+                className={
+                  todo.completed
+                    ? styles.todo_singleitem_completed
+                    : styles.todo_singleitem
+                }
+                key={todo.id}
+              >
+                <Checkbox
+                  id={todo.id}
+                  label={todo.item}
+                  checked={todo.completed}
+                />
+                <ImBin
+                  onClick={() => deleteToDo(todo.id)}
+                  className={styles.delete_icon}
+                />
               </div>
             );
           })}

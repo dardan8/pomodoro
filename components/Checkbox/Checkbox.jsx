@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import styles from "./Checkbox.module.scss";
-import { ImCheckboxUnchecked, ImCheckboxChecked, ImBin } from "react-icons/im";
 
 const Checkbox = ({ id, label, checked, ...props }) => {
   const defaultChecked = checked ? checked : false;
@@ -9,14 +8,16 @@ const Checkbox = ({ id, label, checked, ...props }) => {
 
   return (
     <div className={styles.checkbox_wrapper}>
-      <label>
+      <label className={isChecked ? styles.done_task : ""}>
         <input
           id={id}
           type='checkbox'
           checked={isChecked}
-          onChange={() => setIsChecked((prev) => !prev)}
+          onChange={() => {
+            setIsChecked((prev) => !prev);
+          }}
           {...props}
-        />{" "}
+        />
         {label}
       </label>
     </div>

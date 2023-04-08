@@ -98,6 +98,11 @@ const Countdown = () => {
         <h1>To-do's</h1>
         <TodoList />
       </div>
+
+      <div>
+        <div className={styles.todos_container}></div>{" "}
+        <div className={styles.todos_container}></div>
+      </div>
     </div>
   );
 };
