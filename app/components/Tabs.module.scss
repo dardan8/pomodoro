@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 100%;
   padding: 0;
-  border: 2px solid green;
+  background-color: transparent;
 }
 
 .labelswrapper {
@@ -30,6 +30,10 @@
 }
 
 .labelsingle_inactive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 10rem;
   height: 3rem;
   border: none;
@@ -40,4 +44,11 @@
   color: #f4f4f49d;
   letter-spacing: 1px;
   font-size: 14px;
+}
+
+.tabscontent {
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: transparent;
 }

@@ -14,8 +14,7 @@
   height: 100vh;
 }
 
-.widgetsarea {
-  width: 50%;
+.widgets {
   display: flex;
   padding: 0;
   border: 1px solid red;

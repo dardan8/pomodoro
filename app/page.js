@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className={styles.mainarea}>
       <Hero />
-      <div>
+      <div className={styles.widgets}>
         <Tabs
           tabs={[
             {
@@ -19,14 +19,15 @@ export default function Home() {
             },
             {
               name: "Break",
-              content: <Countdown workingtime={1290} key={2} />,
+              content: <Countdown workingtime={300} key={2} />,
             },
             {
               name: "Long Break",
-              content: <Countdown workingtime={100} key={3} />,
+              content: <Countdown workingtime={600} key={3} />,
             },
           ]}
         />
+        <TodoList />
       </div>
     </div>
   );

@@ -21,7 +21,11 @@ const Tabs = ({ tabs = {} }) => {
               return (
                 <label
                   key={index}
-                  className={styles.labelsingle_active}
+                  className={
+                    index === activeTabIndex
+                      ? styles.labelsingle_active
+                      : styles.labelsingle_inactive
+                  }
                   onClick={() => activateTab(index)}
                 >
                   {tab.name}
