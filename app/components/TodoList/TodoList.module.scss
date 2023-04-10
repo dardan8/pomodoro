@@ -1,11 +1,32 @@
 .todo_widgetarea {
   display: flex;
+  width: 100%;
   flex-direction: column;
 
   gap: 1rem;
   overflow-y: hidden;
   height: 100%;
   position: relative;
+}
+
+.todos_container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  width: 30%;
+  height: 100%;
+  background-color: #fff;
+
+  padding: 3rem;
+  border-radius: 1rem;
+  border: 1px solid #e6e6e6;
+
+  -webkit-box-shadow: 5px 3px 25px 0px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 5px 3px 25px 0px rgba(0, 0, 0, 0.13);
+  box-shadow: 5px 3px 25px 0px rgba(0, 0, 0, 0.08);
+
+  gap: 1rem;
 }
 
 .todo_items {

@@ -1,12 +1,25 @@
-.tabs_container {
+.tabs {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  padding: 0;
+  border: 2px solid green;
+}
+
+.labelswrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   margin-top: -3rem;
 }
 
-.tabs_button {
+.labelsingle_active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 10rem;
   height: 3rem;
-  border: none;
   background-color: #f4f4f4;
   border-radius: 1rem 1rem 0 0;
   cursor: pointer;
@@ -16,7 +29,7 @@
   font-size: 14px;
 }
 
-.tabs_button_inactive {
+.labelsingle_inactive {
   width: 10rem;
   height: 3rem;
   border: none;
