@@ -11,23 +11,35 @@ export default function Home() {
     <div className={styles.mainarea}>
       <Hero />
       <div className={styles.widgets}>
-        <Tabs
-          tabs={[
-            {
-              name: "Work",
-              content: <Countdown workingtime={1500} key={1} />,
-            },
-            {
-              name: "Break",
-              content: <Countdown workingtime={300} key={2} />,
-            },
-            {
-              name: "Long Break",
-              content: <Countdown workingtime={600} key={3} />,
-            },
-          ]}
-        />
-        <TodoList />
+        <div className={styles.pomodoro}>
+          <Tabs
+            tabs={[
+              {
+                name: "Work",
+                content: <Countdown workingtime={1500} key={1} />,
+              },
+              {
+                name: "Break",
+                content: <Countdown workingtime={300} key={2} />,
+              },
+              {
+                name: "Long Break",
+                content: <Countdown workingtime={600} key={3} />,
+              },
+            ]}
+          />
+        </div>
+        <div className={styles.todoarea}>
+          <TodoList />
+        </div>
+        <div className={styles.twowidgets}>
+          <div>
+            <TodoList />
+          </div>
+          <div>
+            <TodoList />
+          </div>
+        </div>
       </div>
     </div>
   );

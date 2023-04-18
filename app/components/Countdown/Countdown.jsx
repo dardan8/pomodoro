@@ -50,7 +50,7 @@ const Countdown = ({ workingtime, key }) => {
   return (
     // <div className={styles.container}>
     <div className={styles.timer_container} key={key}>
-      <div>
+      <div className={styles.clockarea}>
         <CircularProgressbar
           value={percentage}
           text={minutes + ":" + secondsLeft}

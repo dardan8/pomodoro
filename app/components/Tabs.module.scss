@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0;
+  height: 100%;
   background-color: transparent;
 }
 
@@ -49,6 +49,7 @@
 .tabscontent {
   align-items: center;
   justify-content: center;
-  padding: 2rem;
   background-color: transparent;
+  padding: 2rem;
+  height: 100%;
 }
