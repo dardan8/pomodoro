@@ -5,6 +5,8 @@ import Countdown from "./components/Countdown/Countdown";
 import Hero from "./components/Hero/Hero";
 import Tabs from "./components/Tabs";
 import TodoList from "./components/TodoList/TodoList";
+import { QuoteWidget } from "./components/QuoteWidget/QuoteWidget";
+import WeatherWidget from "./components/WeatherWidget/WeatherWidget";
 
 export default function Home() {
   return (
@@ -34,10 +36,10 @@ export default function Home() {
         </div>
         <div className={styles.twowidgets}>
           <div>
-            <TodoList />
+            <QuoteWidget />
           </div>
           <div>
-            <TodoList />
+            <WeatherWidget />
           </div>
         </div>
       </div>

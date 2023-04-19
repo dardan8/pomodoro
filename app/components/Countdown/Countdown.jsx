@@ -63,7 +63,7 @@ const Countdown = ({ workingtime, key }) => {
             },
             text: {
               // Text color
-              fill: "#f4a259",
+              fill: "#d06e6e;",
               // Text size
               fontSize: "17px",
             },
