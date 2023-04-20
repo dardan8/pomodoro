@@ -11,7 +11,7 @@ export const QuoteWidget = () => {
         Just one small positive thought in the morning can change your whole day
       </h1>
       <p className={styles.quoteauthor}>- Author Name</p>
-      <p>#QuoteOfTheDay</p>
+      <p className={styles.hashtag}>#QuoteOfTheDay</p>
     </div>
   );
 };
