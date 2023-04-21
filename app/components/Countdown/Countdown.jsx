@@ -62,7 +62,7 @@ const Countdown = ({ workingtime, key }) => {
               stroke: `rgba(132, 169, 140, ${percentage / 100})`,
             },
             text: {
-              // Text color
+              // Text color - chagned
               fill: "#d06e6e;",
               // Text size
               fontSize: "17px",
