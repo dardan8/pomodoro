@@ -10,7 +10,7 @@ const Hero = () => {
         <h1>Get your productivity on</h1>
       </div>
       <div>
-        <Image src={HeroImage} width={450} />
+        <Image src={HeroImage} width={450} alt='hero' />
       </div>
     </div>
   );

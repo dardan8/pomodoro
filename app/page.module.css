@@ -22,22 +22,25 @@
 }
 
 .pomodoro {
-  width: 33%;
+  width: 28%;
   /* border: 1px solid red; */
-  height: 37rem;
+  height: 30rem;
 }
 
 .todoarea {
-  width: 33%;
+  width: 28%;
   height: 40rem;
   padding: 2rem;
   /* border: 1px solid red; */
-  height: 37rem;
+  height: 30rem;
 }
 
 .twowidgets {
-  width: 33%;
+  display: flex;
+  flex-direction: column;
+  width: 42%;
   padding: 2rem;
   /* border: 1px solid red; */
-  height: 37rem;
+  height: 30rem;
+  gap: 2rem;
 }
