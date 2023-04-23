@@ -5,13 +5,14 @@
   align-items: center;
   padding: 5rem 4rem;
   height: 36vh;
+  border-bottom: 1px solid #ffffff0c;
   color: #f4f4f4;
-  background-color: #84a98c;
-  background: rgb(100, 149, 111);
+
+  background: rgb(132, 169, 140);
   background: linear-gradient(
-    249deg,
-    rgba(100, 149, 111, 1) 12%,
-    rgba(132, 169, 140, 1) 47%
+    0deg,
+    rgba(132, 169, 140, 1) 0%,
+    rgba(255, 252, 235, 1) 100%
   );
 
   .hero_container_left {

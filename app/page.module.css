@@ -10,7 +10,7 @@
 .mainarea {
   display: flex;
   flex-direction: column;
-  background-color: #f4f4f4;
+  /* background-color: #84a98c; */
   height: 100vh;
 }
 
@@ -19,6 +19,12 @@
   height: 100%;
   display: flex;
   align-items: flex-start;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(132, 169, 140, 1) 100%
+  );
 }
 
 .pomodoro {
