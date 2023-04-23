@@ -69,7 +69,9 @@ const TodoList = () => {
             })}
           </div>
         ) : (
-          "Add a to-do and it will appear here"
+          <div className={styles.todo_empty}>
+            Add a to-do and it will appear here...
+          </div>
         )}
       </div>
     </div>

@@ -16,11 +16,15 @@
   box-shadow: 5px 3px 25px 0px rgba(0, 0, 0, 0.08);
 
   gap: 1rem;
+  position: relative;
 }
 
 .quoteicon {
-  font-size: 55px;
-  color: white;
+  font-size: 100px;
+  color: rgba(255, 255, 255, 0.173);
+  position: absolute;
+  top: 0;
+  left: 1rem;
 }
 
 .quotetext {

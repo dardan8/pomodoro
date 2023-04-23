@@ -82,6 +82,14 @@
   justify-content: space-between;
 }
 
+.todo_empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: rgba(0, 0, 0, 0.381);
+}
+
 .todo_button {
   border: 1px solid #96b69d;
   background-color: #84a98c63;

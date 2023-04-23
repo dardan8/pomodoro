@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./QuoteWidget.module.scss";
-import { BsChatLeftQuoteFill } from "react-icons/bs";
 import { ImQuotesLeft } from "react-icons/im";
 
 async function getData() {
@@ -18,11 +17,9 @@ export default async function QuoteWidget() {
 
   return (
     <div className={styles.quotecontainer}>
-      <p className={styles.hashtag}> #MotivationOfTheDay </p>
-
       <ImQuotesLeft className={styles.quoteicon} />
       <h1 className={styles.quotetext}>{quotes[randomNumber].q}</h1>
-      <p className={styles.quoteauthor}> {quotes[randomNumber].a}</p>
+      <p className={styles.quoteauthor}> - {quotes[randomNumber].a}</p>
     </div>
   );
 }
