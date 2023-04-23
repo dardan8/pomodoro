@@ -7,6 +7,12 @@
   height: 36vh;
   color: #f4f4f4;
   background-color: #84a98c;
+  background: rgb(100, 149, 111);
+  background: linear-gradient(
+    249deg,
+    rgba(100, 149, 111, 1) 12%,
+    rgba(132, 169, 140, 1) 47%
+  );
 
   .hero_container_left {
     display: flex;
