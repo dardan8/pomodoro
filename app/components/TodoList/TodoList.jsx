@@ -27,7 +27,7 @@ const TodoList = () => {
 
   return (
     <div className={styles.todos_container}>
-      <h1>To-do's</h1>
+      <h1 className={styles.heading1}>My to-do list</h1>
       <div className={styles.todo_widgetarea}>
         <form className={styles.form_todo}>
           <input

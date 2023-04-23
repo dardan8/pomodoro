@@ -26,6 +26,20 @@
   box-shadow: 35px 35px 68px 0px rgba(132, 169, 140, 0.5),
     inset -8px -8px 16px 0px rgba(132, 169, 140, 0.6),
     inset 0px 11px 28px 0px rgb(255, 255, 255);
+
+  .heading1 {
+    background: linear-gradient(
+      to right bottom,
+      rgba(132, 169, 140, 0.5) 40%,
+      rgba(80, 87, 65, 0.78)
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-size: 28px;
+    font-weight: 600;
+    padding: 0 0 0.3rem 0;
+  }
 }
 
 .todo_items {

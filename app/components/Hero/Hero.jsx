@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div className={styles.hero_container}>
       <div className={styles.hero_container_left}>
-        <h1>Get your productivity on</h1>
+        <h1 className={styles.titlebig}>Get your productivity on.</h1>
       </div>
       <div>
         <Image src={HeroImage} width={450} alt='hero' />
