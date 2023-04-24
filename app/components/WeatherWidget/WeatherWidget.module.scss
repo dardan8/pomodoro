@@ -10,29 +10,35 @@
   padding: 2rem;
 
   backdrop-filter: blur(5px);
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0);
   border-radius: 26px;
-  box-shadow: 35px 35px 68px 0px rgba(132, 169, 140),
+  box-shadow: 35px 35px 68px 0px rgba(132, 169, 140, 0.5),
     inset -8px -8px 16px 0px rgba(132, 169, 140, 0.6),
     inset 0px 11px 28px 0px rgb(255, 255, 255);
-
   gap: 2rem;
 }
 
 .icon {
-  font-size: 54px;
-  border-right: 1px solid #9d9d9d53;
+  border-right: 1px solid #ffffffb4;
   padding-right: 2rem;
 }
 
+.sunicon {
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
 .weatherdata {
-  border-right: 1px solid #9d9d9d53;
+  border-right: 1px solid #ffffffb4;
   padding-right: 2rem;
 }
 
 .city {
   font-size: 15px;
   color: #84a98c;
+  font-weight: 400;
 }
 
 .temp {
@@ -44,4 +50,17 @@
   color: #84a98c;
   font-size: 18px;
   font-weight: 400;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

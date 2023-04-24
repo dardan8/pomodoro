@@ -24,6 +24,10 @@
   }
 }
 
+.herographic {
+  animation: 5s ease-in-out 0.9s infinite upAndDown;
+}
+
 .titlebig {
   width: auto;
   font-size: 53px;
@@ -36,4 +40,23 @@
   background-clip: text;
 
   -webkit-text-fill-color: transparent;
+}
+
+@keyframes upAndDown {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 10%, 0);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .hero_container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
 }

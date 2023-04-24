@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./QuoteWidget.module.scss";
 import { ImQuotesLeft } from "react-icons/im";
 
-async function getData() {
+async function getQuotes() {
   const res = await fetch("https://zenquotes.io/api/quotes/");
   if (!res.ok) {
     console.log("Error");
@@ -12,7 +12,7 @@ async function getData() {
 }
 
 export default async function QuoteWidget() {
-  const quotes = await getData();
+  const quotes = await getQuotes();
   const randomNumber = Math.floor(Math.random() * 50);
 
   return (

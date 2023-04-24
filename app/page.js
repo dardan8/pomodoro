@@ -6,7 +6,7 @@ import TodoList from "./components/TodoList/TodoList";
 import QuoteWidget from "./components/QuoteWidget/QuoteWidget";
 import WeatherWidget from "./components/WeatherWidget/WeatherWidget";
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className={styles.mainarea}>
       <Hero />
@@ -33,10 +33,10 @@ export default function Home() {
           <TodoList />
         </div>
         <div className={styles.twowidgets}>
-          <div>
+          <div className={styles.quotearea}>
             <QuoteWidget />
           </div>
-          <div>
+          <div className={styles.weatherarea}>
             <WeatherWidget />
           </div>
         </div>

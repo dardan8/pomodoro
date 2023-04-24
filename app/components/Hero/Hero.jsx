@@ -10,7 +10,12 @@ const Hero = () => {
         <h1 className={styles.titlebig}>Get your productivity on.</h1>
       </div>
       <div>
-        <Image src={HeroImage} width={450} alt='hero' />
+        <Image
+          src={HeroImage}
+          width={450}
+          alt='hero'
+          className={styles.herographic}
+        />
       </div>
     </div>
   );

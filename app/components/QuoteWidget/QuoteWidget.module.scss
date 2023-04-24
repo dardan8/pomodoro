@@ -49,3 +49,24 @@
   font-size: 16px;
   font-weight: 300;
 }
+
+@media only screen and (max-width: 1000px) {
+  .quotetext,
+  .quoteauthor,
+  .hashtag {
+    color: #84a98c;
+  }
+
+  .quotecontainer {
+    height: 25rem;
+    position: relative;
+  }
+
+  .quoteicon {
+    font-size: 100px;
+    color: #84a98c61;
+    position: absolute;
+    top: 0;
+    left: 1rem;
+  }
+}
