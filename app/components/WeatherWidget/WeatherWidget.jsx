@@ -8,19 +8,19 @@ import { toCelsius } from "@/app/utils/utils";
 
 export default function WeatherWidget() {
   const [weatherdata, setWeatherData] = useState();
-  const [lat, setLat] = useState();
-  const [lng, setLng] = useState();
+  const [lat, setLat] = useState(0);
+  const [lng, setLng] = useState(0);
 
   const apikey = process.env.NEXT_PUBLIC_WEATHER_KEY;
 
-  if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      setLat(position.coords.latitude);
-      setLng(position.coords.longitude);
-    });
-  }
-
   useEffect(() => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        setLat(position.coords.latitude);
+        setLng(position.coords.longitude);
+      });
+    }
+
     async function fetchWeatherData() {
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${apikey}`
