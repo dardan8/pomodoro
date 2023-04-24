@@ -23,7 +23,6 @@ const TodoList = () => {
   };
 
   const todoStatus = (id) => {};
-  console.log(todoList);
 
   return (
     <div className={styles.todos_container}>

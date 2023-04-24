@@ -5,33 +5,38 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Sun from "../../../public/images/Sun.png";
 import { toCelsius } from "@/app/utils/utils";
+import axios from "axios";
 
 export default function WeatherWidget() {
   const [weatherdata, setWeatherData] = useState();
-  const [lat, setLat] = useState(0);
-  const [lng, setLng] = useState(0);
+
+  // const [lat, setLat] = useState();
+  // const [lng, setLng] = useState();
+  const [location, setLocation] = useState([]);
 
   const apikey = process.env.NEXT_PUBLIC_WEATHER_KEY;
 
   useEffect(() => {
     if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        setLat(position.coords.latitude);
-        setLng(position.coords.longitude);
+      // Retrieve latitude & longitude coordinates from `navigator.geolocation` Web API
+      navigator.geolocation.getCurrentPosition(({ coords }) => {
+        const { latitude, longitude } = coords;
+        setLocation({ latitude, longitude });
       });
     }
-
-    async function fetchWeatherData() {
-      const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${apikey}`
-      );
-      const data = response.json();
-
-      setWeatherData(data);
-    }
-
-    fetchWeatherData();
   }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=${apikey}`
+      );
+
+      setWeatherData(result.data);
+    };
+
+    fetchData();
+  }, [location]);
 
   return (
     <div className={styles.weathercontainer}>
@@ -45,25 +50,23 @@ export default function WeatherWidget() {
         />
       </div>
 
-      {weatherdata ? (
+      {weatherdata == undefined ? (
         <h1> No data, please enable your location </h1>
       ) : (
-        <div className={styles.weatherdata}>
-          <h1 className={styles.city}>
-            No data
-            {/* {weatherdata.name && weatherdata.name},{" "} */}
-            {/* {weatherdata.sys.country && weatherdata.sys.country} */}
-            No data
-          </h1>
-          <h3 className={styles.temp}>
-            No data
-            {/* {weatherdata.main.temp && toCelsius(weatherdata.main.temp)} °C */}
-          </h3>
+        <>
+          <div className={styles.weatherdata}>
+            <h1 className={styles.city}>
+              {weatherdata && weatherdata.name},{" "}
+              {weatherdata && weatherdata.sys.country}
+            </h1>
+            <h3 className={styles.temp}>
+              {weatherdata && toCelsius(weatherdata.main.temp)} °C
+            </h3>
+          </div>
           <p className={styles.weatherinfo}>
-            Something went wrong with fetching the data{" "}
-            {/* {weatherdata && weatherdata.weather[0].description} */}
+            {weatherdata && weatherdata.weather[0].description}
           </p>
-        </div>
+        </>
       )}
     </div>
   );

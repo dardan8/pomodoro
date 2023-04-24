@@ -7,7 +7,6 @@ const Tabs = ({ tabs = {} }) => {
 
   const activateTab = (index) => {
     setActiveTabIndex(index);
-    console.log(index);
   };
 
   return (

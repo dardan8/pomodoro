@@ -22,7 +22,6 @@ const Countdown = ({ workingtime, key }) => {
   let secondsLeft = seconds % 60;
 
   let percentage = Math.round((seconds / workingtime) * 100);
-  console.log(secondsLeft + "" + seconds);
 
   if (secondsLeft < 10) {
     secondsLeft = "0" + secondsLeft;
