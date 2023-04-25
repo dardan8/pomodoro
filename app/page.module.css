@@ -28,16 +28,13 @@
 
 .pomodoro {
   width: 28%;
-  /* border: 1px solid red; */
-  height: 30rem;
+  height: 33rem;
 }
 
 .todoarea {
   width: 28%;
-  height: 40rem;
   padding: 2rem;
-  /* border: 1px solid red; */
-  height: 30rem;
+  height: 33rem;
 }
 
 .twowidgets {
@@ -47,7 +44,7 @@
   width: 42%;
   padding: 2rem;
   /* border: 1px solid red; */
-  height: 30rem;
+  height: 33rem;
   gap: 3rem;
 }
 
